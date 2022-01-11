@@ -1,0 +1,29 @@
+steps:
+  - name: 'us.gcr.io/cloud-builders/docker'
+    id: 'build-docker-image-from-dockerfile'
+    args: 
+      - 'build'
+      - '-t'
+      - 'us.gcr.io/html-portfolio-337815/html-portfolio'
+      - '.'
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'push-docker-image-to-gcr'
+    args: 
+      - 'push'
+      - 'us.gcr.io/html-portfolio-337815/html-portfolio'
+  - name: 'us.gcr.io/cloud-builders/gcloud'
+    id: 'deploy-cloud-run'
+    args: 
+      - 'beta'
+      - 'run'
+      - 'deploy'
+      - 'html-portfolio'
+      - '--image'
+      - 'us.gcr.io/html-portfolio-337815/html-portfolio'
+      - '--platform'
+      - 'managed'
+      - '--region'
+      - 'us-west1'
+substitutions:
+  _REGION: us-west1
+  _SERVICE_NAME: html-portfolio
