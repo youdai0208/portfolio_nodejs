@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+            <link href="/pages/product_detalis_page/product_detalis_page.css" rel="stylesheet" type="text/css" media="all" />
+            <title>Youdai's PortFolio Products Detalis</title>
+            <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+        </head>
+    </head>
+    <body>
+        <main>
+            <div class="secure_area">
+                <div class="subject_area">
+                    <h3>製作物詳細</h3>
+                </div>
+                <div id="main_area" class="main_area">
+                    <div class="image_area">
+                        <img id="product_image" src="" alt="product_image">
+                    </div>
+                    <div class="sentence_area">
+                        <a onclick="showSkillPopup()" class="btn"><span>技術</span><span>一覧<span></a>
+                        <a onclick="showDetalisPopup()" class="btn"><span>内容<span></a>
+                        <div id="skill_popup_wrapper" class="popup-wrapper is-hidden">
+                            <div class="popup-background" onclick="hideSkillPopup()"></div>
+                            <div id="skill_popup" class="popup-body">
+                                <div class="skill_area">
+                                    <h3>技術一覧</h3>
+                                    <div class="skill_grid" id="skill_list">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="detalis_popup_wrapper" class="popup-wrapper is-hidden">
+                            <div class="popup-background" onclick="hideDetalisPopup()"></div>
+                            <div id="detalis_popup" class="popup-body">
+                                <div class="explantaion_area">
+                                    <h3>内容</h3>
+                                    <p id="detalis_area">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <ul class="footer-menu">
+                <li><a href="/about">About ｜</a></li>
+                <li><a href="/all_product">All Product ｜</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <p>© 2022-<script>document.write(new Date().getFullYear());</script> Youdai Shimosawa</p>
+        </footer>
+    </body>
+    <script src="/pages/product_detalis_page/product_detalis_page.js"></script>
+</html>

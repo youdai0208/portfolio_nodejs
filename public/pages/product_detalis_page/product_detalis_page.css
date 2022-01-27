@@ -1,0 +1,254 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue',
+    'Arial',
+    'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans',
+    'Meiryo',
+    sans-serif;
+}
+
+div.secure_area {
+    width: calc(100vw - (100vw - 100%));
+    height: auto;
+    min-height: calc(100vh - 7.5vh);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: 
+    "subject_area"
+     "main_area";
+}
+
+div.subject_area {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: 0;
+    /* margin: auto; */
+    font-size: 32px;
+}
+
+div.subject_area h3 {
+    border-bottom: 5px solid darkorange;
+}
+
+div.main_area {
+    grid-area: main_area;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-auto-rows: auto;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+}
+
+div.image_area {
+    width: auto;
+    height: auto;
+    max-width: 75%;
+    margin: auto;
+    display: flex;
+    object-fit: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+div.image_area img {
+    object-fit: cover;
+    height: auto;
+    max-height: 50vh;
+    width: 100%;
+    margin: auto;
+}
+
+div.sentence_area {
+    width: auto;
+    height: auto;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 40% 40%;
+    text-align: center;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+}
+
+div.skill_area {
+    margin: auto;
+    align-items: center;
+}
+
+div.skill_area h3 {
+    font-size: 32px;
+    text-align: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 4px solid darkorange;
+}
+
+div.skill_area ul li {
+    font-size: 28px;
+}
+
+div.skill_name_area {
+    text-align: center;
+    font-size: 28px;
+    margin: auto;
+}
+
+div.explantaion_area {
+    text-align: center;
+}
+
+div.explantaion_area h3 {
+    font-size: 32px;
+    text-align: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 4px solid darkorange;
+}
+
+div.explantaion_area p {
+    margin: auto;
+    font-size: 24px;
+}
+
+div.explantaion_area p b {
+    border-bottom: 2px solid darkorange;
+}
+
+.popup-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+.popup-background{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-body{
+    width: 50%; 
+    height: auto;
+    max-height: 75%;
+    position: absolute; 
+    top: 50%;
+    left: 22.5%;
+    background-color: white;
+    overflow-y: auto;
+    padding: 2.5%;
+    transform: translateY(-50%);
+}
+
+.is-hidden{
+    visibility: hidden;
+}
+
+.skill_grid {
+    display: grid;
+    grid-auto-rows: 235px;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    justify-content: center;
+}
+
+a.btn {
+    width: 25vw;
+    height: auto;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+    margin: 1em;
+    padding: 1em 1em 2em;
+    box-shadow: inset 0 0 0 2.5px black;
+    color: black;
+    position: relative;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+a.btn span {
+    display: inline-block;
+}
+
+a.btn:before, a.btn:after {
+    box-sizing: inherit;
+    content: "";
+    position: absolute;
+    border: 3px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+a.btn:before {
+    top: 0;
+    left: 0;
+}
+
+a.btn:after {
+    bottom: 0;
+    right: 0;
+}
+
+a.btn:hover:before, a.btn:hover:after {
+    width: 100%;
+    height: 100%;
+}
+
+a.btn:hover span {
+    color: darkorange;
+}
+
+a.btn:hover:before {
+    border-top-color: darkorange;
+    border-right-color: darkorange;
+    transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+}
+
+a.btn:hover:after {
+    border-bottom-color: darkorange;
+    border-left-color: darkorange;
+    transition: border-color 0s ease-out 0.2s, width 0.15s ease-out 0.2s, height 0.15s ease-out 0.3s;
+}
+
+@media all and (max-width: 999px) {
+    div.image_area img {
+        max-height: 50vh;
+    }
+}
+
+@media all and (min-width: 1000px) {
+    div.image_area img {
+        max-height: 65vh;
+    }
+}
+
+footer{
+    width: calc(100vw - (100vw - 100%));
+    height: 7.5vh;
+    background-color: darkorange;
+    color: white;
+    text-align: center;
+}
+
+ul.footer-menu {
+    padding-left: 0;
+    margin: 0;
+}
+
+ul.footer-menu li {
+    display: inline;
+    text-decoration: none;
+}
+
+ul.footer-menu li a {
+    text-decoration: none;
+    color: white;
+}

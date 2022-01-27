@@ -23,7 +23,7 @@ steps:
       - '--platform'
       - 'managed'
       - '--region'
-      - 'us-west1'
+      - 'us-east1'
 substitutions:
-  _REGION: us-west1
+  _REGION: us-east1
   _SERVICE_NAME: html-portfolio
