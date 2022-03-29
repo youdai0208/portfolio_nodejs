@@ -9,21 +9,17 @@
         product_name = url_split.slice(-1)[0];
     }
 
-    console.log(url_split);
-
-    var product_id = url.searchParams.get("id");
-
     const req_json_url = `/api/product/${product_name}`;
 
     fetch(req_json_url)
-        .then(res => {
+        .then((res) => {
             return res.json();
         })
-        .then(res => {
-            console.log(res);
-            setDetalis(res);
+        .then((data) => {
+            console.log(data);
+            setDetalis(data);
         })
-        .catch(e => {
+        .catch((e) => {
             console.log(e);
         });
 
@@ -32,7 +28,7 @@
 })();
 
 function setDetalis(res){
-    var data = res.at(0);
+    var data = res[0];
     var img_area = document.getElementById("product_image");
     var skill_list = document.getElementById("skill_list")
     var detalis_area = document.getElementById("detalis_area");
@@ -47,7 +43,7 @@ function setDetalis(res){
     });
 
     img_area.setAttribute("src", data.img_path);
-    detalis_area.innerHTML = `<p><b>製作物名</b><br>${data.name_html}</p><p><b>期間</b><br>${data.start_time} ~ ${data.end_time}</p><p><b>担当</b><br>${data.responsible}</p><p><b>動機</b><br>　${data.purpose}</p><p><b>特徴</b><br>　${data.features}</p><p><b>その他</b><br>　${data.other}</p>`;
+    detalis_area.innerHTML = `<p><b>製作物名</b><br>${data.name_html}</p><p><br><b>期間</b><br>${data.start_time} ~ ${data.end_time}</p><br><p><b>担当</b><br>${data.responsible}</p><br><p><b>動機</b><br>　${data.purpose}</p><br><p><b>特徴</b><br>　${data.features}</p><br><p><b>その他</b><br>　${data.other}</p>`;
 }
 
 function popupPositionAdjust(target_element){
